@@ -1,8 +1,10 @@
+const React = require('react');
+const { render } = require('react-dom');
+const App = require('./App');
+
 require('./styles/main.scss');
 
-(() => {
-  const rootElement = document.getElementById('root');
-
-  rootElement.textContent = 'Text has been changed';
-  console.log(rootElement);
-})();
+render(
+  <App />,
+  document.getElementById('app')
+);
