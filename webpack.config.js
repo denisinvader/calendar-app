@@ -13,12 +13,13 @@ module.exports = {
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')
-    }
+    },
+    extensions: ['.js', '.jsx', '.json']
   },
   module:{
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
