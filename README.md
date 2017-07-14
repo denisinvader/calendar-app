@@ -17,7 +17,7 @@ How to
 You can add this repository as remote one for existing project:
 ```
 git init
-git remote add boilerplate git@github.com:denisinvader/simple-webpack-boilerplate.git
+git remote add boilerplate git@github.com:denisinvader/webpack-boilerplate.git
 git pull boilerplate master
 
 ```
