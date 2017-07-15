@@ -26,25 +26,23 @@ function Calendar ({ month, year, locale }) {
     );
   }
 
-  d.date(1);
-  while (d.month() == month) {
-    if (!calendar[d.week()])
-      calendar[d.week()] = [];
-
-    if (d.month() === month)
-      calendar[d.week()].push(<td key={`d_${d.date()}`}>{ d.date() }</td>);
-
-    d.date(d.date() + 1);
-  }
-
-  if (calendar.hasOwnProperty(1) && !calendar.hasOwnProperty(2)) {
-    calendar[Math.max.apply(null, Object.keys(calendar)) + 1] = calendar[1];
-    delete calendar[1];
-  }
-
+  d.weekday(0);
   var weeks = [];
-  for (let week in calendar)
-    weeks.push(<tr key={`w_${week}`}>{ calendar[week] }</tr>);
+  do {
+    let week = [];
+    let isWeekInMonth = false;
+    for (let i = 0; i < 7; i++) {
+      if (d.month() === month)
+        isWeekInMonth = true;
+
+      week.push(<td key={`${d.month()}_${d.date()}`}>{ d.date() }</td>);
+
+      d.date(d.date() + 1);
+    }
+
+    if (isWeekInMonth)
+      weeks.push(<tr key={`w_${d.week()}`}>{ week }</tr>);
+  } while (d.month() === month);
 
   return (
     <table>
