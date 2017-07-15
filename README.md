@@ -1,21 +1,11 @@
-Simple React boilerplate
+React calendar organizer app
 ==
 
-How to
---
-You can add this repository as remote one for existing project:
-```
-git init
-git remote add boilerplate git@github.com:denisinvader/react-boilerplate.git
-git pull boilerplate master
-
-```
-Or just clone the repository and install dependencies:
 ```
 npm install
 ```
 
-Then you can run webpack watcher and edit sources in `src` folder:
+You can run webpack watcher:
 ```
 npm run watch
 ```
